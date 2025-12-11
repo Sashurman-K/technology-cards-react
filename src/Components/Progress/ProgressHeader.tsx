@@ -21,7 +21,14 @@ function ProgressHeader({technologies}: ProgressHeaderProps){
                 <h1>Статистика</h1>
                 <p>Общее количесво технологий: {technologies.length}</p>
                 <p>Количество изученных технологий: {technologies.filter(technologe => technologe.status === 'completed').length}</p>
-                <ProgressBar targetProgress={progress}/>
+                <p>Количество технологий в процессе изучения: {technologies.filter(technologe => technologe.status === 'in-progress').length}</p>
+                <p>Количество не изученных технологий: {technologies.filter(technologe => technologe.status === 'not-completed').length}</p>
+                <ProgressBar
+                progress={progress}
+                color="#4CAF50"
+                animated={true}
+                 height={20}
+                />
             </div>
 
         </div>

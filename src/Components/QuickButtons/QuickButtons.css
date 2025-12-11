@@ -1,0 +1,120 @@
+.QuickButtons__container{
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+button{
+    all: unset;
+    padding-inline: 40px;
+    padding-block: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+
+button:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px);
+}
+
+.QuickButtons__status-button.complete{
+    background: linear-gradient(150deg, #ffffff 25%, #a2ffc1 100%);
+}
+.QuickButtons__status-button.not-started{
+    background: linear-gradient(150deg, #ffffff 25%, #ffa2a2 100%);
+}
+.QuickButtons__status-random-button{
+    background: linear-gradient(150deg, #ffffff 25%, #ffdba2 100%);
+
+}
+
+.QuickButtons__filter-button.all{
+    background: linear-gradient(150deg, #ffffff 25%, #a3a2ff 100%);
+}
+.QuickButtons__filter-button.not-started{
+    background: linear-gradient(150deg, #ffffff 25%, #ffa2a2 100%);
+}
+.QuickButtons__filter-button.in-progress{
+    background: linear-gradient(150deg, #ffffff 25%, #ffdba2 100%);
+}
+.QuickButtons__filter-button.completed{
+    background: linear-gradient(150deg, #ffffff 25%, #a2ffc1 100%);
+}
+.QuickButtons__export-button{
+    background: linear-gradient(150deg, #ffffff 25%, #ae34ff 100%);
+}
+
+.search-box {
+    margin: 20px 10px;
+    padding: 15px;
+    background: #f8f9ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #eef2ff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+.search-box span {
+    font-size: 14px;
+    color: #666;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    min-width: 80px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* Анимация при фокусе */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0.1); }
+    70% { box-shadow: 0 0 0 6px rgba(74, 144, 226, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 144, 226, 0); }
+}
+
+.search-box input:focus {
+    animation: pulse 1.5s infinite;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .search-box span {
+        align-self: flex-start;
+    }
+}

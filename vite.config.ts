@@ -10,4 +10,5 @@ export default defineConfig({
       },
     }),
   ],
+  base: '/technology-cards-react/'
 })
