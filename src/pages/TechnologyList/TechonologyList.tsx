@@ -3,6 +3,7 @@ import { useAppLogic } from '../../Hooks/useAppLogic';
 import { useState } from 'react';
 import TechnologyModal from '../../Components/TechnologyCard/TechnologyModal'; // Импортируем ваш компонент Modal
 import './TechnologyList.css';
+import ProgressBar from '../../Components/Progress/ProgressBar';
 
 interface Technology {
   id: number;
@@ -75,17 +76,7 @@ function TechnologyList() {
       <div className="page-header">
         <div className="header-left">
           <h1>Все технологии</h1>
-          <div className="progress-indicator">
-            <div className="progress-bar">
-              <div
-                className="progress-fill"
-                style={{ width: `${progress}%` }}
-              ></div>
-            </div>
-            <span className="progress-text">
-              Прогресс: {progress}%
-            </span>
-          </div>
+          <ProgressBar progress={progress} />
         </div>
         <div className="header-right">
           <button
