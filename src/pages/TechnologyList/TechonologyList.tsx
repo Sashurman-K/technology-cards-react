@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useAppLogic } from '../../Hooks/useAppLogic';
 import { useState } from 'react';
+import TechnologyModal from '../../Components/TechnologyCard/TechnologyModal'; // Импортируем ваш компонент Modal
 import './TechnologyList.css';
 
 interface Technology {
@@ -256,40 +257,25 @@ function TechnologyList() {
         )}
       </div>
 
-      {/* Модальное окно экспорта */}
-      {isExportModalOpen && (
-        <div className="modal-overlay" onClick={() => setIsExportModalOpen(false)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h2>📤 Экспорт данных</h2>
-              <button
-                className="modal-close-btn"
-                onClick={() => setIsExportModalOpen(false)}
-              >
-                ×
-              </button>
-            </div>
+      <TechnologyModal
+        isOpen={isExportModalOpen}
+        onClose={() => setIsExportModalOpen(false)}
+        title="📤 Экспорт данных"
+      >
+        <div className="export-modal-content">
+          <div className="export-success-icon">✅</div>
+          <h3>Данные экспортированы</h3>
+          <p>Файл с данными успешно скачан.</p>
+          <p>Всего экспортировано записей: <strong>{filteredTechnologies.length}</strong></p>Ё
 
-            <div className="modal-body">
-              <div className="export-message">
-                <div className="export-success-icon">✅</div>
-                <h3>Данные экспортированы</h3>
-                <p>Файл с данными успешно скачан.</p>
-                <p>Всего экспортировано записей: <strong>{filteredTechnologies.length}</strong></p>
-              </div>
-            </div>
-
-            <div className="modal-footer">
-              <button
-                onClick={() => setIsExportModalOpen(false)}
-                className="btn btn-primary"
-              >
-                Закрыть
-              </button>
-            </div>
-          </div>
+          <button
+            className="btn btn-primary modal-close-btn"
+            onClick={() => setIsExportModalOpen(false)}
+          >
+            Закрыть
+          </button>
         </div>
-      )}
+      </TechnologyModal>
     </div>
   );
 }

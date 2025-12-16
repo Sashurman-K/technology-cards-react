@@ -1,16 +1,14 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react'; // Добавляем useEffect
 import Home from './pages/Home';
-// import About from './pages/About';
 import Login from './pages/Login/Login';
-// import Dashboard from './pages/Dashboard';
 import TechnologyList from './pages/TechnologyList/TechonologyList';
+import { CountriesPage } from './pages/CountryPages/CountryPage';
 import TechnologyDetail from './pages/TechnologyDetail/TechnologyDetail';
 import Statistics from './pages/Statistics/Statistics';
 import Settings from './pages/Settings/Settings';
 import ProtectedRoute from './Components/ProtectedRoute';
 import './App.css';
-import TechnologyCard from './Components/TechnologyCard/TechnologyCard';
 import AddTechnology from './pages/AddTechnology/AddTecnology';
 function App() {
     // Состояние для отслеживания авторизации
@@ -40,6 +38,8 @@ function App() {
                     <h2>Трекер технологий</h2>
                     <ul className="nav-links">
                         <li><Link to="/">Главная</Link></li>
+                        <li><Link to="/countries">Страны (Работа с API)</Link></li>
+
                         {isLoggedIn ? (
                             <>
                                 <li><Link to="/technologies">Все технологии</Link></li>
@@ -98,6 +98,9 @@ function App() {
                                 </ProtectedRoute>
                             }
                         />
+                        <Route path="/countries" element={
+                            <CountriesPage />}
+                            />
                         <Route
                             path='/settings'
                             element={

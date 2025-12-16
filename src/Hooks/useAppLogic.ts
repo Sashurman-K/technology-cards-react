@@ -4,7 +4,7 @@ import { useTechnologyFilters } from './useTechnologyFilters';
 export const useAppLogic = () => {
     const {
         technologies,
-        setTechnologies,
+        
         updateStatus,
         updateNotes,
         updateAllStatuses,
@@ -18,7 +18,6 @@ export const useAppLogic = () => {
         setSearchQuery,
         filteredTechnologies,
         handleFilterChange,
-        handleMassStatusUpdate,
         getRandomNotStartedTechnology
     } = useTechnologyFilters(technologies);
 

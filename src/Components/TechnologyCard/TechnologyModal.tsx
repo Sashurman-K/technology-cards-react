@@ -1,11 +1,6 @@
 import './TechnologyModal.css';
 
-interface ModalProps{
-    isOpen : boolean;
-    onClose : () => void;
-    title : string;
-    children : any;
-}
+
 function Modal({ isOpen, onClose, title, children } : any) {
  // Если модалка закрыта - не показываем ничего
  if (!isOpen) {

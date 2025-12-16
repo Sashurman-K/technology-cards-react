@@ -1,6 +1,5 @@
 import { useAppLogic } from "../../Hooks/useAppLogic"
 import "./Statistics.css"
-import { Link } from 'react-router-dom';
 
 
 

@@ -1,6 +1,6 @@
 import "./TechnologyDetail.css";
 import TechnologyNotes from "../../Components/TechnologyCard/TechnologyNotes";
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 function TechnologyDetail() {
@@ -9,7 +9,7 @@ function TechnologyDetail() {
 
     useEffect(() => {
         const saved = localStorage.getItem('technologies');
-        if (saved) {
+        if (saved && techId) {
             const technologies = JSON.parse(saved);
             const tech = technologies.find((t: any) => t.id === parseInt(techId));
             setTechnology(tech);
@@ -18,7 +18,7 @@ function TechnologyDetail() {
 
     const updateStatus = (newStatus: string) => {
         const saved = localStorage.getItem('technologies');
-        if (saved && technology) {
+        if (saved && technology && techId) {
             const technologies = JSON.parse(saved);
             const updated = technologies.map((tech: any) =>
                 tech.id === parseInt(techId) ? { ...tech, status: newStatus } : tech

@@ -1,6 +1,6 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAppLogic } from '../../Hooks/useAppLogic';
+import  useTechnologies   from '../../Hooks/useTechnologies';
 import './AddTechnology.css';
 
 type TechStatus = 'not-started' | 'in-progress' | 'completed';
@@ -8,7 +8,7 @@ type TechCategory = 'frontend' | 'backend' | 'mobile' | 'devops' | 'database' | 
 
 const AddTechnology = () => {
   const navigate = useNavigate();
-  const { technologies, setTechnologies } = useAppLogic();
+  const { technologies, setTechnologies } = useTechnologies();
 
   const [formData, setFormData] = useState({
     title: '',
@@ -62,7 +62,7 @@ const AddTechnology = () => {
     }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
@@ -90,9 +90,8 @@ const AddTechnology = () => {
         createdAt: new Date().toISOString()
       };
 
-      const currentTechnologies = JSON.parse(localStorage.getItem('technologies') || '[]');
 
-      const exists = currentTechnologies.some((tech: any) =>
+      const exists = technologies.some((tech: any) =>
         tech.title.toLowerCase() === newTechnology.title.toLowerCase()
       );
 
@@ -100,7 +99,7 @@ const AddTechnology = () => {
         throw new Error('Технология с таким названием уже существует');
       }
 
-      const updatedTechnologies = [...currentTechnologies, newTechnology];
+      const updatedTechnologies = [...technologies, newTechnology];
       localStorage.setItem('technologies', JSON.stringify(updatedTechnologies));
 
       if (setTechnologies) {

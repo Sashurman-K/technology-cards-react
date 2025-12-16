@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 // Кастомный хук для работы с localStorage
 function useLocalStorage(key : string, initialValue : any) {
     // Инициализируем состояние, пытаясь получить значение из localStorage
