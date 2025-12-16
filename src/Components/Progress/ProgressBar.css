@@ -1,153 +1,28 @@
-.progress-bar-container {
-  width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-}
-
-.progress-bar-header {
+.progress-indicator {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  gap: 15px;
+  max-width: 400px;
 }
 
-.progress-label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
-}
-
-.progress-percentage {
-  font-size: 14px;
-  font-weight: 600;
-  color: #666;
-  background-color: #f8f9fa;
-  padding: 2px 8px;
-  border-radius: 12px;
-  border: 1px solid #e9ecef;
-}
-
-.progress-bar-outer {
-  position: relative;
-  background-color: #f0f0f0;
-  border-radius: 10px;
+.progress-bar {
+  flex: 1;
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 5px;
   overflow: hidden;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.progress-bar-inner {
+.progress-fill {
   height: 100%;
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-  transition: width 0.3s ease-in-out;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 5px;
+  transition: width 0.5s ease;
 }
 
-/* Анимированная версия */
-.progress-bar-inner.animated {
-  animation: pulse 2s infinite;
-}
-
-/* Полосатый эффект для анимированного варианта */
-.progress-bar-inner.animated::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.15) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.15) 50%,
-    rgba(255, 255, 255, 0.15) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: 1rem 1rem;
-  animation: stripe 2s linear infinite;
-}
-
-/* Разные состояния прогресса */
-.progress-bar-container.success .progress-bar-inner {
-  background-color: #28a745;
-}
-
-.progress-bar-container.warning .progress-bar-inner {
-  background-color: #ffc107;
-}
-
-.progress-bar-container.error .progress-bar-inner {
-  background-color: #dc3545;
-}
-
-.progress-bar-container.info .progress-bar-inner {
-  background-color: #17a2b8;
-}
-
-/* Анимации */
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes stripe {
-  0% {
-    background-position: 1rem 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
-
-/* Кастомные цвета через CSS переменные */
-.progress-bar-container.custom {
-  --progress-color: var(--custom-color, #4CAF50);
-}
-
-.progress-bar-container.custom .progress-bar-inner {
-  background-color: var(--progress-color);
-}
-
-/* Темная тема */
-@media (prefers-color-scheme: dark) {
-  .progress-bar-container {
-    color: #e0e0e0;
-  }
-
-  .progress-label {
-    color: #e0e0e0;
-  }
-
-  .progress-percentage {
-    color: #b0b0b0;
-    background-color: #2d2d2d;
-    border-color: #404040;
-  }
-
-  .progress-bar-outer {
-    background-color: #2d2d2d;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
-  }
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .progress-bar-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-  }
-
-  .progress-percentage {
-    align-self: flex-end;
-  }
+.progress-text {
+  font-size: 14px;
+  color: #4a5568;
+  font-weight: 600;
+  min-width: 100px;
 }

@@ -23,8 +23,8 @@ export const useAppLogic = () => {
     } = useTechnologyFilters(technologies);
 
     // Функция для массового обновления статусов
-    const handleMassStatusUpdateClick = (status: string) => {
-        console.log(`handleMassStatusUpdateClick ${status}`)
+    const handleMassStatusUpdateClick = (status : string) => {
+        console.log(`Mass update to: ${status}`);
         updateAllStatuses(status);
     };
 
@@ -60,7 +60,7 @@ export const useAppLogic = () => {
     return {
         // Данные
         technologies,
-        filteredTechnologies, // Отфильтрованные и найденные
+        filteredTechnologies,
         progress,
 
         // Фильтры и поиск
@@ -68,9 +68,10 @@ export const useAppLogic = () => {
         searchQuery,
 
         // Функции
-        updateStatus,
-        updateNotes,
+        updateStatus,  // Добавлено
+        updateNotes,   // Добавлено
         setSearchQuery,
+        setFilterValue, // Добавлено для возможности сброса фильтра
 
         // Обработчики
         handleMassStatusUpdate: handleMassStatusUpdateClick,
@@ -79,4 +80,4 @@ export const useAppLogic = () => {
     };
 };
 
-export default useAppLogic
+export default useAppLogic;
