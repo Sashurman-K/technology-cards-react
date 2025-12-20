@@ -4,7 +4,7 @@ import { useTechnologyFilters } from './useTechnologyFilters';
 export const useAppLogic = () => {
     const {
         technologies,
-        
+        updateMultipleStatuses,
         updateStatus,
         updateNotes,
         updateAllStatuses,
@@ -25,6 +25,9 @@ export const useAppLogic = () => {
     const handleMassStatusUpdateClick = (status : string) => {
         console.log(`Mass update to: ${status}`);
         updateAllStatuses(status);
+    };
+        const handleMassSelectedUpdate = (techIds: number[], newStatus: string) => {
+        updateMultipleStatuses(techIds, newStatus);
     };
 
     // Функция для случайного выбора и обновления статуса
@@ -67,15 +70,15 @@ export const useAppLogic = () => {
         searchQuery,
 
         // Функции
-        updateStatus,  // Добавлено
-        updateNotes,   // Добавлено
+        updateStatus,
+        updateNotes,
         setSearchQuery,
-        setFilterValue, // Добавлено для возможности сброса фильтра
+        setFilterValue,
 
-        // Обработчики
         handleMassStatusUpdate: handleMassStatusUpdateClick,
         handleRandomTechnology,
-        handleFilterChange
+        handleFilterChange,
+        handleMassSelectedUpdate
     };
 };
 

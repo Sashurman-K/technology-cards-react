@@ -1,7 +1,7 @@
 import './TechnologyModal.css';
 
 
-function Modal({ isOpen, onClose, title, children } : any) {
+function Modal({ isOpen, onClose, title, children,  } : any) {
  // Если модалка закрыта - не показываем ничего
  if (!isOpen) {
  return null;

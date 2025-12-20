@@ -55,7 +55,7 @@ function TechnologyDetail() {
     return (
         <div className="page">
             <div className="page-header">
-                <Link to="/technologies" className="btn-primary">
+                <Link to="/technologies" className="btn-primary-back">
                     ← Назад к списку
                 </Link>
                 <h1>{technology.title}</h1>

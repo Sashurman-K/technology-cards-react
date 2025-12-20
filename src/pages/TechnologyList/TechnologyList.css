@@ -1,495 +1,8 @@
-/* TechnologyList.css */
+/* TechnologyList.css - Минимальные стили для совместимости с MUI */
 
-.technology-list-page {
-  padding: 20px;
-}
+/* Удаляем все старые стили, кроме анимаций и специфичных классов */
 
-/* Хедер */
-.header-left {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.header-left h1 {
-  margin: 0;
-  color: #2d3748;
-  font-size: 2rem;
-}
-
-
-
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-/* Кнопка "Добавить технологию" */
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4191 100%);
-}
-
-.btn-primary:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-}
-
-/* Карточка технологии */
-.technology-item {
-  background: white;
-  border-radius: 12px;
-  padding: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e2e8f0;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.technology-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-color: #667eea;
-}
-
-.technology-item:active {
-  transform: translateY(-2px);
-}
-
-.tech-main-section {
-  padding: 25px;
-  flex: 1;
-}
-
-.tech-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 15px;
-}
-
-.tech-header h3 {
-  margin: 0;
-  color: #2d3748;
-  font-size: 1.25rem;
-  font-weight: 700;
-  flex: 1;
-}
-
-.tech-category {
-  background-color: #f0f4ff;
-  color: #667eea;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  white-space: nowrap;
-  margin-left: 10px;
-}
-
-.tech-description {
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  font-size: 0.95rem;
-}
-
-.tech-notes-preview {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 20px;
-  padding: 12px;
-  background-color: #f9fafb;
-  border-radius: 8px;
-  border-left: 3px solid #4299e1;
-}
-
-.notes-icon {
-  font-size: 14px;
-  flex-shrink: 0;
-}
-
-.notes-text {
-  font-size: 0.85rem;
-  color: #4a5568;
-  line-height: 1.5;
-  flex: 1;
-}
-
-.tech-status-section {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.status-indicator {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.status-cycle {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.status {
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  min-width: 120px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-
-.technology-item:hover .status::after {
-  opacity: 0.8;
-  transform: translateX(0);
-}
-
-.status-not-started {
-  background-color: #fed7d7;
-  color: #c53030;
-  border: 2px solid #fc8181;
-}
-
-
-.status-in-progress {
-  background-color: #fdfed7;
-  color: #c5b130;
-  border: 2px solid #fcec81;
-}
-
-
-.status-completed {
-  background-color: #c6f6d5;
-  color: #22543d;
-  border: 2px solid #9ae6b4;
-}
-
-
-.status-hint {
-  font-size: 0.8rem;
-  color: #718096;
-  font-style: italic;
-  opacity: 0.8;
-}
-
-.tech-date {
-  font-size: 0.75rem;
-  color: #a0aec0;
-  margin-top: 5px;
-  display: block;
-}
-
-/* Секция "Подробнее" */
-.details-section {
-  background-color: #f7fafc;
-  border-top: 2px solid #e2e8f0;
-  padding: 20px 25px;
-  margin-top: auto;
-}
-
-
-.details-content {
-  display: flex;
-  width: 100%;
-}
-
-.details-link {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 16px;
-  background-color: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  color: #4a5568;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.details-link:hover {
-  background-color: #667eea;
-  color: white;
-  border-color: #667eea;
-  transform: translateY(-5px);
-}
-
-/* Панель управления */
-.control-panel {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  margin: 20px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.search-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.search-input-wrapper {
-  position: relative;
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-}
-
-.search-input {
-  width: 100%;
-  padding: 12px 40px 12px 15px;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  background-color: #f7fafc;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #667eea;
-  background-color: white;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.clear-search-btn {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: #a0aec0;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.2s ease;
-}
-
-.clear-search-btn:hover {
-  background-color: #e2e8f0;
-  color: #4a5568;
-}
-
-.search-hint {
-  font-size: 0.9rem;
-  color: #718096;
-  font-weight: 500;
-}
-
-/* Фильтры */
-.filter-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.filter-buttons {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* Кнопка фильтра */
-.filter-btn {
-  padding: 10px 20px;
-  background-color: #f7fafc;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #4a5568;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 140px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-
-.filter-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
-  background-color: #f0f4ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
-}
-
-.filter-btn.active {
-  background-color: #667eea;
-  color: white;
-  border-color: #667eea;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-
-.filter-btn.active:hover {
-  background-color: #5a6fd8;
-  border-color: #5a6fd8;
-}
-
-/* Кнопка "Случайная технология" */
-.random-btn {
-  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
-}
-
-.random-btn:hover {
-  background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(72, 187, 120, 0.4);
-}
-
-.random-btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
-}
-
-.mass-actions {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-}
-
-.mass-actions-label {
-  font-size: 0.9rem;
-  color: #718096;
-  font-weight: 500;
-  white-space: nowrap;
-}
-
-.mass-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* Массовые кнопки */
-.btn-outline {
-  background: transparent;
-  border: 2px solid #e2e8f0;
-  color: #4a5568;
-  border-radius: 8px;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-
-
-.btn-outline:hover {
-  border-color: #667eea;
-  color: #667eea;
-  background-color: #f0f4ff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
-}
-
-/* Вторичная кнопка (для кнопки сброса фильтров) */
-.btn-secondary {
-  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(160, 174, 192, 0.3);
-}
-
-.btn-secondary:hover {
-  background: linear-gradient(135deg, #718096 0%, #4a5568 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(160, 174, 192, 0.4);
-}
-
-.btn-secondary:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(160, 174, 192, 0.3);
-}
-
-/* Сетка технологий */
-.technologies-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 30px;
-  margin-top: 30px;
-}
-
-/* Анимации */
+/* Анимации для плавного появления карточек */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -501,258 +14,206 @@
   }
 }
 
-.technology-item {
+/* Эффект клика для обратной связи */
+@keyframes clickEffect {
+  0% {
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  }
+  50% {
+    box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Анимации для срочных дедлайнов */
+@keyframes pulseWarning {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes pulseUrgent {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes pulseOverdue {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  70% {
+    box-shadow: 0 0 0 5px rgba(220, 38, 38, 0);
+  }
+}
+
+/* Классы для анимаций дедлайнов (если хотим использовать в дополнение к MUI Alert) */
+.deadline-overdue {
+  animation: pulseOverdue 0.8s infinite !important;
+}
+
+.deadline-urgent {
+  animation: pulseUrgent 1s infinite !important;
+}
+
+.deadline-warning {
+  animation: pulseWarning 1.5s infinite !important;
+}
+
+/* Специфичные стили для ProgressBar компонента (если он не из MUI) */
+.custom-progress-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-progress-bar .progress-fill {
+  transition: width 0.3s ease-in-out;
+}
+
+/* Кастомные классы для очень специфичных случаев */
+.tech-item-enter {
   animation: fadeIn 0.5s ease-out;
 }
 
-.technologies-grid > *:nth-child(1) { animation-delay: 0.1s; }
-.technologies-grid > *:nth-child(2) { animation-delay: 0.2s; }
-.technologies-grid > *:nth-child(3) { animation-delay: 0.3s; }
+/* Порядок анимации для сетки технологий */
+.tech-grid-item:nth-child(1) { animation-delay: 0.1s; }
+.tech-grid-item:nth-child(2) { animation-delay: 0.2s; }
+.tech-grid-item:nth-child(3) { animation-delay: 0.3s; }
+.tech-grid-item:nth-child(4) { animation-delay: 0.4s; }
+.tech-grid-item:nth-child(5) { animation-delay: 0.5s; }
 
-/* Эффект клика */
-@keyframes clickEffect {
-  0% { box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3); }
-  50% { box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5); }
-  100% { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); }
-}
-
-.technology-item.clicked {
-  animation: clickEffect 0.4s ease;
-}
-
-/* Пустое состояние */
-.empty-state {
-  text-align: center;
-  padding: 60px 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 2px solid #e2e8f0;
-}
-
-.empty-state h3 {
-  color: #2d3748;
-  margin-bottom: 15px;
-  font-size: 1.5rem;
-}
-
-.empty-state p {
-  color: #718096;
-  margin-bottom: 30px;
-  font-size: 1rem;
-}
-
-.empty-state .btn {
-  margin: 0 5px;
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .technologies-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .tech-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .tech-category {
-    margin-left: 0;
-  }
-
-  .status-cycle {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .filter-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .mass-actions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .mass-buttons {
-    justify-content: stretch;
-  }
-
-  .mass-buttons .btn-outline {
-    flex: 1;
-    text-align: center;
-  }
-
-  .search-section {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .search-input-wrapper {
-    min-width: 100%;
-  }
-
-  .filter-buttons {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .filter-btn,
-  .random-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .header-right {
-    margin-top: 15px;
-  }
-
-  .btn-primary {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-/* Стили для кнопки экспорта */
-.btn-export {
-  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3);
-  margin-right: 15px;
-}
-
-.btn-export:hover {
-  background: linear-gradient(135deg, #dd6b20 0%, #c05621 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(237, 137, 54, 0.4);
-}
-
-.btn-export:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
-}
-
-/* Стили для кнопки экспорта */
-.btn-export {
-  background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3);
-  margin-right: 15px;
-}
-
-.btn-export:hover {
-  background: linear-gradient(135deg, #dd6b20 0%, #c05621 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(237, 137, 54, 0.4);
-}
-
-.btn-export:active {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3);
-}
-
-/* Содержимое модального окна экспорта */
-.export-modal-content {
-  text-align: center;
-  padding: 20px;
-}
-
-.export-success-icon {
-  font-size: 48px;
-  margin-bottom: 20px;
-}
-
-.export-modal-content h3 {
-  margin: 0 0 15px 0;
-  color: #2d3748;
-  font-size: 1.4rem;
-}
-
-.export-modal-content p {
-  margin: 0 0 10px 0;
-  color: #4a5568;
-  font-size: 1.1rem;
-}
-
-.export-modal-content strong {
-  color: #667eea;
-  font-size: 1.2rem;
-}
-
-.export-details {
-  background: #f8fafc;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 20px 0;
-  text-align: left;
-}
-
-.export-details p {
-  margin: 8px 0;
+/* Стили для экрана загрузки, если не используем MUI CircularProgress */
+.loading-screen {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.detail-value {
-  font-weight: 600;
-  color: #2d3748;
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(102, 126, 234, 0.2);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-.modal-close-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  width: 100%;
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
-.modal-close-btn:hover {
-  background: linear-gradient(135deg, #5a6fd8 0%, #6a4191 100%);
-  transform: translateY(-2px);
-}
-
-/* Адаптивность */
-@media (max-width: 768px) {
-  .header-right {
-    flex-direction: column;
-    gap: 10px;
+/* Адаптивность для очень маленьких экранов (дополнительно к MUI) */
+@media (max-width: 350px) {
+  .MuiCard-root {
+    margin: 0 -8px;
+    border-radius: 0 !important;
   }
 
-  .btn-export {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100%;
-    justify-content: center;
+  .MuiDialog-paper {
+    margin: 8px !important;
+    max-width: calc(100% - 16px) !important;
   }
+}
+
+/* Стили для улучшения видимости фокуса (усиление стандартных стилей MUI) */
+.MuiButton-root:focus-visible,
+.MuiChip-root:focus-visible,
+.MuiCard-root:focus-visible {
+  outline: 3px solid rgba(102, 126, 234, 0.5) !important;
+  outline-offset: 2px !important;
+}
+
+/* Пользовательские стили для статусов, если нужно что-то особенное */
+.status-chip-custom {
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Для анимации при клике на карточку */
+.clicked-card {
+  animation: clickEffect 0.4s ease !important;
+}
+
+/* Стили для скроллбара в модальных окнах (если нужны кастомные) */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Темная тема для скроллбара */
+@media (prefers-color-scheme: dark) {
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #2d3748;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #4a5568;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+  }
+}
+
+/* Минимальные стили для устаревших браузеров */
+.no-grid-support {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.no-grid-support .tech-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+/* Печатные стили */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .MuiCard-root {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* Специфичные ховер-эффекты, если стандартные MUI не подходят */
+.enhanced-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.enhanced-hover-effect:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
 }

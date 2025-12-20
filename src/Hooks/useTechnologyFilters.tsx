@@ -5,7 +5,11 @@ export const useTechnologyFilters = (technologies: any) => {
     const [searchQuery, setSearchQuery] = useState('');
 
     // Функция для смены фильтра
-    const handleFilterChange = () => {
+    const handleFilterChange = (status? : 'all' | 'not-started' |'in-progress' |'completed') => {
+        if (status){
+            setFilterValue(status);
+            return;
+        }
         const filters: Array<'all' | 'not-started' | 'in-progress' | 'completed'> =
             ['all', 'not-started', 'in-progress', 'completed'];
         const currentIndex = filters.indexOf(filterValue);

@@ -288,8 +288,6 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
-  padding-top: 25px;
-  border-top: 2px solid #f1f5f9;
   gap: 20px;
 }
 
@@ -368,3 +366,165 @@
   to { transform: rotate(360deg); }
 }
 
+/* Добавьте эти стили в конец файла AddTechnology.css */
+
+/* Стили для поля дедлайна */
+.deadline-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.deadline-input-wrapper input[type="date"] {
+  padding-right: 40px;
+  width: 100%;
+}
+
+.clear-deadline-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #a0aec0;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.clear-deadline-btn:hover {
+  background-color: #e2e8f0;
+  color: #4a5568;
+}
+
+.deadline-hint {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-top: 8px;
+  min-height: 24px;
+}
+
+.deadline-estimate {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: #f0f9ff;
+  border-radius: 6px;
+  color: #0369a1;
+}
+
+.deadline-days {
+  font-weight: 600;
+  color: #059669;
+}
+
+/* Стили для ошибок валидации */
+.add-tech-input-error {
+  border-color: #f87171 !important;
+  background-color: #fef2f2 !important;
+}
+
+.add-tech-error-message-small {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Советы по дедлайнам */
+.deadline-tips {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.deadline-tips-title {
+  color: #334155;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.deadline-tips-list {
+  margin: 0;
+  padding-left: 20px;
+  color: #4a5568;
+}
+
+.deadline-tips-list li {
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.deadline-tips-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Адаптивность для поля даты */
+@media (max-width: 768px) {
+  .deadline-input-wrapper input[type="date"] {
+    font-size: 16px; /* Предотвращает увеличение в iOS */
+    min-height: 44px; /* Минимальная высота для удобного тапа */
+  }
+}
+
+/* Стили для состояний фокуса и доступности */
+.add-tech-input:focus,
+.add-tech-textarea:focus {
+  outline: 3px solid rgba(102, 126, 234, 0.4);
+  outline-offset: 2px;
+}
+
+
+
+/* Стили для клавиатурной навигации */
+.add-tech-category-btn:focus,
+.add-tech-status-btn:focus,
+.add-tech-btn:focus,
+.clear-deadline-btn:focus {
+  outline: 3px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Скрытие для скринридеров */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
